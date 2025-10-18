@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from 'next/font/google';
 
+import Providers from "@/lib/providers";
 import "@/styles/globals.css";
 
 export const poppins = Poppins({
@@ -19,12 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning={true} className="light">
       <head>
         <link rel="icon" href="/favicon.svg" sizes="any" />
       </head>
       <body className={`${poppins.className} antialiased scroll-smooth min-h-screen`}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

@@ -30,7 +30,8 @@
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noUnknownAtRules": "off"
+        "noUnknownAtRules": "off",
+        "noDuplicateJsxProps": "warn"
       }
     },
     "domains": {
